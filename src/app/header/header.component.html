@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" class="mat-elevation-z4" [style.height.px]="toolbarHeight">
+    <ng-container *ngIf="windowWidth >= breakpointWidth; else home">
+        <a routerLink="" class="span--class">
+            <span class="white-text">Your</span>
+            <span class="red-text">Movies</span>
+        </a>
+    </ng-container>
+    <div class="spacer"></div>
+    <ng-container *ngIf="windowWidth >= breakpointWidth; else icon">
+        <img src="favicon.ico" alt="Favicon" class="favicon">
+        Like your favourites!
+    </ng-container>
+    <div class="spacer"></div>
+    <ng-container *ngIf="windowWidth >= breakpointWidth; else dropdownMenu">
+        <div class="vertical-line"></div>
+        <a mat-fab extended class="buttons" routerLink="" #allMovies>
+            <mat-icon>movie</mat-icon>
+            All Movies
+        </a>
+        <div class="vertical-line"></div>
+        <a mat-fab extended class="buttons" routerLink="" #favorites>
+            <mat-icon>star</mat-icon>
+            Favourites
+        </a>
+    </ng-container>
+
+    <ng-template #home>
+        <a routerLink="" class="home-class">
+            <mat-icon>home</mat-icon>
+        </a>
+    </ng-template>
+
+    <ng-template #icon>
+        <img src="favicon.ico" alt="Favicon" class="favicon">
+    </ng-template>
+
+    <ng-template #dropdownMenu>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="">
+                <mat-icon>movie</mat-icon>
+                All Movies
+            </button>
+            <button mat-menu-item routerLink="">
+                <mat-icon>star</mat-icon>
+                Favourites
+            </button>
+        </mat-menu>
+    </ng-template>
+</mat-toolbar>
+<div class="content"></div>
