@@ -1,0 +1,12 @@
+<div class="movie--container">
+    <div class="movie--item">
+        <img [src]="movieService.getMoviePosterUrl(movie.poster_path)" alt="{{ movie.title }} Poster" class="movie--image">
+        <div class="movie--content">
+            <div class="movie--name">{{ movie.title }}</div>
+            <div class="movie--date"><strong>Release date:</strong> {{ movie.release_date | date:'MM/dd/yyyy' }}</div>
+            <button mat-fab (click)="toggleFavourite(movie)" style="background-color: #0c0c0c;">
+                <mat-icon>{{ favoritesService.isFavourite(movie) ? 'star' : 'star_border' }}</mat-icon>
+              </button>
+        </div>
+    </div>
+</div>

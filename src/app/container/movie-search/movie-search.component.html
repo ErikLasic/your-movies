@@ -1,0 +1,42 @@
+<form class="centered-form">
+    <button mat-mini-fab [style.visibility]="searchQuery ? 'visible' : 'hidden'" class="btn-clear"
+        (click)="clearInput()" type="button">
+        <mat-icon>clear</mat-icon>
+    </button>
+    <input type="text" [(ngModel)]="searchQuery" name="searchQuery" class="styled-input"
+        placeholder="Enter movie title">
+    <button mat-raised-button class="btn-search" (click)="searchMovies(searchQuery)">
+        <mat-icon>search</mat-icon>
+        Search
+    </button>
+</form>
+<div class="centered-form">
+    <button mat-mini-fab [style.visibility]="selectedGenre? 'visible' : 'hidden'" class="btn-clear"
+        (click)="clearGenre()" type="button">
+        <mat-icon>clear</mat-icon>
+    </button>
+    <mat-select placeholder="Select Genre" [(ngModel)]="selectedGenre" name="selectedGenre" class="styled-input-select">
+        <mat-option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</mat-option>
+    </mat-select>
+    <button mat-raised-button class="btn-filter" (click)="onGenreSelect()">
+        <mat-icon>movie_filter</mat-icon>
+        Filter
+    </button>
+</div>
+
+<div class="movie--list--container">
+    <div class="movie--container">
+        <div class="movie--item" *ngFor="let movie of searchResults">
+            <img [src]="movieService.getMoviePosterUrl(movie.poster_path)" alt="{{ movie.title }} Poster"
+                class="movie--image">
+            <div class="movie--content">
+                <div class="movie--name">{{ movie.title }}</div>
+                <div class="movie--date"><strong>Release date:</strong> {{ movie.release_date | date:'MM/dd/yyyy' }}
+                </div>
+                <button mat-fab (click)="toggleFavourite(movie)" style="background-color: #0c0c0c;">
+                    <mat-icon>{{ favoritesService.isFavourite(movie) ? 'star' : 'star_border' }}</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

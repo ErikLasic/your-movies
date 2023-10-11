@@ -8,17 +8,17 @@
     <div class="spacer"></div>
     <ng-container *ngIf="windowWidth >= breakpointWidth; else icon">
         <img src="favicon.ico" alt="Favicon" class="favicon">
-        Like your favourites!
+        Search for your favourite movies and like them!
     </ng-container>
     <div class="spacer"></div>
     <ng-container *ngIf="windowWidth >= breakpointWidth; else dropdownMenu">
         <div class="vertical-line"></div>
-        <a mat-fab extended class="buttons" routerLink="" #allMovies>
+        <a mat-fab extended class="buttons" routerLink="search" #findMovies>
             <mat-icon>movie</mat-icon>
-            All Movies
+            Find Movies
         </a>
         <div class="vertical-line"></div>
-        <a mat-fab extended class="buttons" routerLink="" #favorites>
+        <a mat-fab extended class="buttons" routerLink="favourites" #favorites>
             <mat-icon>star</mat-icon>
             Favourites
         </a>
@@ -39,11 +39,11 @@
             <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="">
+            <button mat-menu-item routerLink="search">
                 <mat-icon>movie</mat-icon>
-                All Movies
+                Find Movies
             </button>
-            <button mat-menu-item routerLink="">
+            <button mat-menu-item routerLink="favourites">
                 <mat-icon>star</mat-icon>
                 Favourites
             </button>

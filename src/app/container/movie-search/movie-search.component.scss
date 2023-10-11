@@ -1,0 +1,61 @@
+.movie--list--container {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-form {
+    width: 50%;
+    margin: 2vh auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.styled-input {
+    width: 60%;
+    background-color: whitesmoke;
+    border: 2px solid #0c0c0c;
+    min-width: 150px;
+    height: 5vh;
+    min-height: 5vh;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.styled-input-select {
+    width: 10%;
+    background-color: whitesmoke;
+    color:#0c0c0c;
+    border: 2px solid #0c0c0c;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn-search {
+    padding: 20px 25px;
+    margin-left: 2vh;
+    min-width: auto;
+}
+
+.btn-filter {
+    padding: 10px;
+    margin-left: 2vh;
+    min-width: auto;
+}
+
+.btn-clear {
+    margin-right: 1vw;
+    color: #a82a2a;
+    background-color: #363636;
+}
+
+.hidden {
+    display: none;
+}

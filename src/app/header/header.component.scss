@@ -1,7 +1,6 @@
 .mat-toolbar.mat-primary {
     background: #0c0c0c;
     color: whitesmoke;
-    height: 8vh;
     position: fixed;
     top: 0;
     width: 100%;
@@ -27,7 +26,7 @@
 }
 
 .content {
-    padding-top: 8vh;
+    padding-top: 80px;
 }
 
 .buttons {
@@ -36,15 +35,27 @@
     margin-right: 25px;
     color: whitesmoke;
     border-radius: 50px 0;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s;
+    position: relative;
     font-size: large;
     padding: 18px 9px;
 }
 
 .buttons:hover {
-    transform: rotate(360deg);
-    transition-delay: 0.1s;
+    animation: bubble 0.4s ease-out;
 }
+
+@keyframes bubble {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 .buttons:focus {
     outline: none;

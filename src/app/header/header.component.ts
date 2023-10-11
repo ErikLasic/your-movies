@@ -6,7 +6,7 @@ import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @ViewChild('allMovies') allMoviesButton!: ElementRef;
+  @ViewChild('findMovies') findMoviesButton!: ElementRef;
   @ViewChild('favorites') favoritesButton!: ElementRef;
 
   windowWidth: number = window.innerWidth;
@@ -30,8 +30,8 @@ export class HeaderComponent {
   updateToolbarHeight() {
     setTimeout(() => {
       const buttonHeights = [
-        this.allMoviesButton.nativeElement.clientHeight,
-        this.favoritesButton.nativeElement.clientHeight
+        this.findMoviesButton.nativeElement?.clientHeight,
+        this.favoritesButton.nativeElement?.clientHeight
       ];
 
       const maxHeight = Math.max(...buttonHeights);
