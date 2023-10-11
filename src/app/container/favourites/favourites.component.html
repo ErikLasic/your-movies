@@ -1,16 +1,6 @@
 <div class="title">Your favourite movies</div>
 <div class="favorites--list--container">
-    <div class="movie--container">
-        <div class="movie--item" *ngFor="let favourite of favorites">
-            <img [src]="movieService.getMoviePosterUrl(favourite.poster_path)" alt="{{ favourite.title }} Poster" class="movie--image">
-            <div class="movie--content">
-                <div class="movie--name">{{ favourite.title }}</div>
-                <div class="movie--date"><strong>Release date:</strong> {{ favourite.release_date | date:'MM/dd/yyyy' }}
-                </div>
-                <button mat-fab (click)="toggleFavourite(favourite)" style="background-color: #0c0c0c;">
-                    <mat-icon>{{ favoritesService.isFavourite(favourite) ? 'star' : 'star_border' }}</mat-icon>
-                </button>
-            </div>
-        </div>
-    </div>
+    <ng-container *ngFor="let favourite of favorites">
+        <app-movie [movie]="favourite"></app-movie>
+    </ng-container>
 </div>
