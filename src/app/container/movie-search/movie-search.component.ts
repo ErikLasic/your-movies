@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FavoritesService } from 'src/app/favorites.service';
 import { MovieService } from 'src/app/movie.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class MovieSearchComponent {
   genres: any[] = [];
   selectedGenre: number | null = null;
 
-  constructor(public movieService: MovieService, public favoritesService: FavoritesService) {
+  constructor(public movieService: MovieService) {
     this.loadGenres();
   }
 
@@ -27,7 +26,6 @@ export class MovieSearchComponent {
       }
     });
   }
-  
 
   onGenreSelect() {
     if (this.selectedGenre) {
@@ -51,11 +49,6 @@ export class MovieSearchComponent {
         console.error(error);
       }
     });
-  }
-  
-
-  toggleFavourite(movie: any): void {
-    this.favoritesService.toggleFavourite(movie);
   }
 
   clearInput() {

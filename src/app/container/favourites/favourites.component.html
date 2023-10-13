@@ -1,6 +1,6 @@
 <div class="title">Your favourite movies</div>
 <div class="favorites--list--container">
     <ng-container *ngFor="let favourite of favorites">
-        <app-movie [movie]="favourite"></app-movie>
+        <app-movie [movie]="favourite" (favoriteChanged)="updateFavourites()"></app-movie>
     </ng-container>
 </div>

@@ -14,7 +14,7 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe((data) => {
       this.popularMovies = data.results;
-      console.log(this.popularMovies);
+      //console.log(this.popularMovies);
     });
   }
 }

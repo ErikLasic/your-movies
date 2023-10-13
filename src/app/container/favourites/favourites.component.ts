@@ -16,7 +16,7 @@ export class FavouritesComponent implements OnInit {
     this.favorites = this.favoritesService.getFavoritesFromStorage();
   }
 
-  toggleFavourite(movie: any): void {
-    this.favorites = this.favoritesService.toggleFavourite(movie);
+  updateFavourites(): void {
+    this.favorites = this.favoritesService.getFavoritesFromStorage();
   }
 }
